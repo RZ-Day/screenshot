@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "ScreenShutter",
+    "version": "1.0",
+    "description": "A simple Chrome extension for screnshotting your current page",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage",
+        "cookies",
+        "downloads"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["scrollSnap.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "cam-icon-1.jpg",
+            "48": "cam-icon-1.jpg",
+            "128": "cam-icon-1.jpg"
+        },
+        "default_title": "Screenshot Page"
+    },
+    "icons": {
+        "16": "cam-icon-1.jpg",
+        "48": "cam-icon-1.jpg",
+        "128": "cam-icon-1.jpg"
+    }
+}
